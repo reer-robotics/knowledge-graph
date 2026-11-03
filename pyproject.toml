@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reer-knowledge-graph"
+version = "0.1.0"
+description = "Extensible local knowledge maps with evidence-backed, reviewable relationships"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["Flask>=3.1,<4", "httpx>=0.28,<1", "jsonschema>=4.23,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+knowledge-map = "knowledge_graph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+knowledge_graph = ["web/*", "web/vendor/*", "profiles/*.json", "skills/*.json", "demo/*.json", "schemas/*.json", "workflow.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

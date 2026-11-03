@@ -1,0 +1,12 @@
+{
+  "id": "note",
+  "version": 1,
+  "description": "General notes, topics, and collections",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {}
+  },
+  "example": {}
+}

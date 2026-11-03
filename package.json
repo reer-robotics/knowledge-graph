@@ -1,0 +1,1 @@
+{"name":"reer-knowledge-graph-ui","private":true,"type":"module","scripts":{"test":"node --test tests/state.test.mjs"}}

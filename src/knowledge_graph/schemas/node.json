@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "kind",
+    "body",
+    "tags",
+    "aliases",
+    "profile",
+    "fields",
+    "access",
+    "maturity"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,79}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "kind": {
+      "enum": [
+        "topic",
+        "document",
+        "claim",
+        "evidence",
+        "collection"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "maxItems": 30,
+      "uniqueItems": true
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "maxItems": 20,
+      "uniqueItems": true
+    },
+    "profile": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,79}$"
+    },
+    "fields": {
+      "type": "object"
+    },
+    "access": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "minItems": 1,
+      "maxItems": 20,
+      "uniqueItems": true
+    },
+    "maturity": {
+      "enum": [
+        "provisional",
+        "observation",
+        "unverified",
+        "peer_validated",
+        "approved"
+      ]
+    }
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "nodes": [
+    {
+      "id": "world-action-models",
+      "title": "World Action Models",
+      "kind": "topic",
+      "body": "Synthetic topic description: World Action Models.",
+      "tags": [
+        "world",
+        "action",
+        "learning",
+        "model",
+        "prediction"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "dynamics",
+      "title": "Dynamics",
+      "kind": "topic",
+      "body": "Synthetic topic description: Dynamics.",
+      "tags": [
+        "dynamics",
+        "mechanics",
+        "motion"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "optimization",
+      "title": "Optimization",
+      "kind": "topic",
+      "body": "Synthetic topic description: Optimization.",
+      "tags": [
+        "optimization",
+        "planning",
+        "assumptions"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "algebra",
+      "title": "Algebra",
+      "kind": "topic",
+      "body": "Synthetic topic description: Algebra.",
+      "tags": [
+        "algebra",
+        "groups"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "wam-survey",
+      "title": "World Action Models: research questions",
+      "kind": "document",
+      "body": "Synthetic research outline: investigate how a learned model might connect observations, predicted dynamics and candidate robot actions. This outline proposes studying mechanics and optimization as foundations; it contains no validated performance claims.",
+      "tags": [
+        "world",
+        "action",
+        "learning",
+        "model",
+        "dynamics",
+        "optimization"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    {
+      "id": "dynamics-note",
+      "title": "A toy dynamics model",
+      "kind": "document",
+      "body": "Synthetic teaching note: model motion under explicitly stated assumptions. A robot planning study could use this dynamics model, but applicability must be checked for the actual system.",
+      "tags": [
+        "dynamics",
+        "mechanics",
+        "robot",
+        "planning"
+      ],
+      "aliases": [],
+      "profile": "physics-model",
+      "fields": {
+        "equations": [
+          "Illustrative model: F = m a"
+        ],
+        "units": "F in newtons; m in kilograms; a in metres per second squared.",
+        "assumptions": [
+          "Constant mass; an inertial reference frame."
+        ],
+        "validity": "Teaching example only; not a validated model of a specific robot."
+      },
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    {
+      "id": "optimization-note",
+      "title": "Optimization: assumptions before solutions",
+      "kind": "document",
+      "body": "Synthetic theorem worksheet: before using an optimization result in robot planning, state its assumptions and proof obligations. This worksheet deliberately contains an unfinished proof.",
+      "tags": [
+        "optimization",
+        "planning",
+        "assumptions",
+        "proof"
+      ],
+      "aliases": [],
+      "profile": "theorem",
+      "fields": {
+        "statement": "Example exercise: establish a property of a chosen optimization problem.",
+        "assumptions": [
+          "The problem and feasible set must be specified."
+        ],
+        "proof": "Incomplete exercise; no theorem is asserted as established.",
+        "proof_status": "unverified"
+      },
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    {
+      "id": "algebra-note",
+      "title": "Abstract algebra reading questions",
+      "kind": "document",
+      "body": "Synthetic independent research notes on groups and algebraic structure. No robotics connection is asserted. This document demonstrates that independent fields belong in the same library.",
+      "tags": [
+        "algebra",
+        "groups",
+        "structure"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    {
+      "id": "prediction-claim",
+      "title": "Toy claim: prediction may aid planning",
+      "kind": "claim",
+      "body": "Synthetic hypothesis: a learned dynamics predictor may improve planning on the specified toy task. No general performance claim is established.",
+      "tags": [
+        "prediction",
+        "planning"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    {
+      "id": "toy-evidence",
+      "title": "Toy experiment: missing validation",
+      "kind": "evidence",
+      "body": "Synthetic evidence record: no controlled evaluation of the toy dynamics predictor has yet been performed. This is an evidence gap, not support for a performance claim.",
+      "tags": [
+        "prediction",
+        "dynamics",
+        "evaluation"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    {
+      "id": "autonomy-reading",
+      "title": "Autonomy foundations",
+      "kind": "collection",
+      "body": "A synthetic cross-domain reading collection connecting robotics, mechanics and mathematics.",
+      "tags": [],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    }
+  ],
+  "edges": [
+    {
+      "source": "world-action-models",
+      "target": "learning",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "world-action-models",
+      "target": "ai",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "dynamics",
+      "target": "physics",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "optimization",
+      "target": "mathematics",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "algebra",
+      "target": "mathematics",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "wam-survey",
+      "target": "world-action-models",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "dynamics-note",
+      "target": "dynamics",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "optimization-note",
+      "target": "optimization",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "optimization-note",
+      "target": "planning",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "algebra-note",
+      "target": "algebra",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "wam-survey",
+      "target": "prediction-claim",
+      "type": "contains",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "wam-survey",
+      "target": "toy-evidence",
+      "type": "contains",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "wam-survey",
+      "target": "autonomy-reading",
+      "type": "in_collection",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "dynamics-note",
+      "target": "autonomy-reading",
+      "type": "in_collection",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "optimization-note",
+      "target": "autonomy-reading",
+      "type": "in_collection",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "wam-survey",
+      "target": "dynamics-note",
+      "type": "depends_on",
+      "reason": "Proposed foundation for this synthetic investigation; a reviewer must check applicability.",
+      "evidence": [
+        {
+          "node_id": "wam-survey",
+          "revision": 1,
+          "quote": "Synthetic research outline: investigate how a learned model might connect observations, predicted dynamics and candidate robot actions. This outline proposes studying mechanics and optimization as foundations; it contains no validated performance claims.",
+          "locator": "Synthetic body, paragraph 1"
+        },
+        {
+          "node_id": "dynamics-note",
+          "revision": 1,
+          "quote": "Synthetic teaching note: model motion under explicitly stated assumptions. A robot planning study could use this dynamics model, but applicability must be checked for the actual system.",
+          "locator": "Synthetic body, paragraph 1"
+        }
+      ]
+    },
+    {
+      "source": "wam-survey",
+      "target": "optimization-note",
+      "type": "related_to",
+      "reason": "Shared research context; not evidence of a theorem or performance claim.",
+      "evidence": [
+        {
+          "node_id": "wam-survey",
+          "revision": 1,
+          "quote": "Synthetic research outline: investigate how a learned model might connect observations, predicted dynamics and candidate robot actions. This outline proposes studying mechanics and optimization as foundations; it contains no validated performance claims.",
+          "locator": "Synthetic body, paragraph 1"
+        },
+        {
+          "node_id": "optimization-note",
+          "revision": 1,
+          "quote": "Synthetic theorem worksheet: before using an optimization result in robot planning, state its assumptions and proof obligations. This worksheet deliberately contains an unfinished proof.",
+          "locator": "Synthetic body, paragraph 1"
+        }
+      ]
+    }
+  ]
+}

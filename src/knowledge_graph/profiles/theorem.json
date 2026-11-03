@@ -1,0 +1,46 @@
+{
+  "id": "theorem",
+  "version": 1,
+  "description": "Formal statements with explicit assumptions and proof status",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "statement",
+      "assumptions",
+      "proof",
+      "proof_status"
+    ],
+    "properties": {
+      "statement": {
+        "type": "string",
+        "minLength": 1
+      },
+      "assumptions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "proof": {
+        "type": "string",
+        "minLength": 1
+      },
+      "proof_status": {
+        "enum": [
+          "unverified"
+        ]
+      }
+    }
+  },
+  "example": {
+    "statement": "State the claim precisely.",
+    "assumptions": [
+      "List the conditions."
+    ],
+    "proof": "Proof not yet supplied.",
+    "proof_status": "unverified"
+  }
+}

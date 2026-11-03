@@ -1,0 +1,17 @@
+{
+  "id": "geometry",
+  "title": "Geometry",
+  "kind": "topic",
+  "body": "A new mathematics topic for shapes, transformations and spatial relationships.",
+  "tags": [
+    "geometry",
+    "spatial"
+  ],
+  "aliases": [],
+  "profile": "note",
+  "fields": {},
+  "access": [
+    "demo"
+  ],
+  "maturity": "provisional"
+}

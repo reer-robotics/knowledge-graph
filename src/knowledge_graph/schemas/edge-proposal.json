@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "target",
+    "type",
+    "reason",
+    "evidence"
+  ],
+  "properties": {
+    "source": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,79}$"
+    },
+    "target": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,79}$"
+    },
+    "type": {
+      "enum": [
+        "belongs_to",
+        "contains",
+        "in_collection",
+        "cites",
+        "related_to",
+        "supports",
+        "contradicts",
+        "depends_on",
+        "supersedes"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "node_id",
+          "revision",
+          "quote",
+          "locator"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,79}$"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      },
+      "maxItems": 8
+    }
+  }
+}

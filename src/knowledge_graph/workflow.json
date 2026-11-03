@@ -1,0 +1,16 @@
+{
+  "id": "classify-and-connect",
+  "version": 1,
+  "steps": [
+    "normalize",
+    "retrieve",
+    "classify",
+    "relate",
+    "verify",
+    "validate",
+    "human_review"
+  ],
+  "model_policy": "one-optional-local-model",
+  "automatic_retries": 0,
+  "open_web": false
+}

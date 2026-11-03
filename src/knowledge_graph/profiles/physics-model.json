@@ -1,0 +1,51 @@
+{
+  "id": "physics-model",
+  "version": 1,
+  "description": "Physical equations, units, assumptions and validity limits",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "equations",
+      "units",
+      "assumptions",
+      "validity"
+    ],
+    "properties": {
+      "equations": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "units": {
+        "type": "string",
+        "minLength": 1
+      },
+      "assumptions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1
+      },
+      "validity": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "example": {
+    "equations": [
+      "Describe the governing equation."
+    ],
+    "units": "Specify units.",
+    "assumptions": [
+      "Specify assumptions."
+    ],
+    "validity": "State the range of applicability."
+  }
+}

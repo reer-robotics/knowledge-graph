@@ -1,0 +1,33 @@
+{
+  "id": "experiment",
+  "version": 1,
+  "description": "Experimental observations and their limits",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "setup",
+      "measurements",
+      "uncertainty"
+    ],
+    "properties": {
+      "setup": {
+        "type": "string",
+        "minLength": 1
+      },
+      "measurements": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uncertainty": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "example": {
+    "setup": "Synthetic setup",
+    "measurements": "No measured results supplied",
+    "uncertainty": "Unassessed"
+  }
+}

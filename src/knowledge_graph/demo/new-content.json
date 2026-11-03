@@ -1,0 +1,19 @@
+{
+  "id": "trajectory-study",
+  "title": "Trajectory optimization investigation",
+  "kind": "document",
+  "body": "Synthetic new content: investigate trajectory optimization for robot planning. Compare dynamics assumptions and optimization constraints before selecting a method. No experimental result has been collected.",
+  "tags": [
+    "trajectory",
+    "optimization",
+    "planning",
+    "dynamics"
+  ],
+  "aliases": [],
+  "profile": "note",
+  "fields": {},
+  "access": [
+    "demo"
+  ],
+  "maturity": "observation"
+}

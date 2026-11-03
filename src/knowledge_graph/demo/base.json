@@ -1,0 +1,190 @@
+{
+  "nodes": [
+    {
+      "id": "knowledge",
+      "title": "Knowledge atlas",
+      "kind": "topic",
+      "body": "A synthetic extensible knowledge library. All examples are illustrative, not company findings.",
+      "tags": [],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "robotics",
+      "title": "Robotics",
+      "kind": "topic",
+      "body": "Synthetic topic description: Robotics.",
+      "tags": [
+        "robot",
+        "autonomy",
+        "planning"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "ai",
+      "title": "Artificial intelligence",
+      "kind": "topic",
+      "body": "Synthetic topic description: Artificial intelligence.",
+      "tags": [
+        "learning",
+        "model",
+        "prediction"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "physics",
+      "title": "Physics",
+      "kind": "topic",
+      "body": "Synthetic topic description: Physics.",
+      "tags": [
+        "mechanics",
+        "dynamics"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "mathematics",
+      "title": "Mathematics",
+      "kind": "topic",
+      "body": "Synthetic topic description: Mathematics.",
+      "tags": [
+        "optimization",
+        "probability",
+        "algebra"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "learning",
+      "title": "Learning & autonomy",
+      "kind": "topic",
+      "body": "Synthetic topic description: Learning & autonomy.",
+      "tags": [
+        "learning",
+        "model",
+        "action"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "planning",
+      "title": "Robot planning",
+      "kind": "topic",
+      "body": "Synthetic topic description: Robot planning.",
+      "tags": [
+        "trajectory",
+        "planning",
+        "control"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    },
+    {
+      "id": "unclassified",
+      "title": "Unclassified",
+      "kind": "topic",
+      "body": "New work can remain here until an appropriate topic is proposed.",
+      "tags": [],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "provisional"
+    }
+  ],
+  "edges": [
+    {
+      "source": "robotics",
+      "target": "knowledge",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "ai",
+      "target": "knowledge",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "physics",
+      "target": "knowledge",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "mathematics",
+      "target": "knowledge",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "unclassified",
+      "target": "knowledge",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "learning",
+      "target": "robotics",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    },
+    {
+      "source": "planning",
+      "target": "robotics",
+      "type": "belongs_to",
+      "reason": "Explicit placement in this synthetic demonstration.",
+      "evidence": []
+    }
+  ]
+}
