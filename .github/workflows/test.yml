@@ -20,4 +20,5 @@ jobs:
       - run: pytest -q
       - run: node --test tests/state.test.mjs
       - run: python examples/run_demo.py
+      - run: python examples/content_fit.py
       - run: python -m pip wheel --no-deps . -w dist

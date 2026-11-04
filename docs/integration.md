@@ -38,3 +38,11 @@ These are versioned integration boundaries, not completed automatic integrations
 ## Backup and maintenance
 
 Stop the local server and copy the SQLite file plus custom profile files to a controlled backup location. The code repository is not a backup of knowledge data. Test restore periodically. Do not commit live databases, private exports or credentials. The browser Export is a convenient current snapshot, not a full database/history backup.
+
+### Inspection endpoints
+
+- `GET /api/node/<id>`: full selected node, short excerpt, accepted direct-child preview (maximum eight), permitted child count, relationships, graph revision.
+- `GET /api/edge/<id>`: one relationship plus short summaries of source and target, from the same authorized snapshot. Use its graph revision for a review decision.
+- `GET /api/examples`: synthetic addable records, expected topic fits and whether each ID already exists in the current permitted workspace. Expectations are demonstration guidance, not classifier overrides.
+
+These read endpoints use the same loopback and audience restrictions as the existing demo API.

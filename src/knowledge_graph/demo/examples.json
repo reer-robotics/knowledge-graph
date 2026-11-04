@@ -1,0 +1,76 @@
+[
+  {
+    "node": {
+      "id": "example-action-rollouts",
+      "title": "Action rollouts: a comparison plan",
+      "kind": "document",
+      "body": "Synthetic research plan: compare a world action model that predicts action outcomes with a simple baseline. Log prediction errors and learning assumptions before judging robot performance. No evaluation has been run.",
+      "tags": [
+        "world",
+        "action",
+        "model",
+        "prediction",
+        "learning"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    "expected": "World Action Models; possibly Learning & autonomy and Artificial intelligence.",
+    "expected_topics": [
+      "world-action-models"
+    ]
+  },
+  {
+    "node": {
+      "id": "example-motion-assumptions",
+      "title": "Motion model: checking assumptions",
+      "kind": "document",
+      "body": "Synthetic physics note: investigate dynamics and mechanics assumptions in a motion model. Record forces, mass, units and validity limits before using predictions. This is a study plan with no experimental results.",
+      "tags": [
+        "dynamics",
+        "mechanics",
+        "motion"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    "expected": "Physics \u2192 Dynamics, with a possible connection to the toy dynamics document.",
+    "expected_topics": [
+      "dynamics"
+    ]
+  },
+  {
+    "node": {
+      "id": "example-group-questions",
+      "title": "Groups: independent reading questions",
+      "kind": "document",
+      "body": "Synthetic mathematics reading plan: study algebra and groups through definitions of group operations, identity and inverses. Compare algebraic structure examples. No theorem or robotics application is claimed.",
+      "tags": [
+        "algebra",
+        "groups",
+        "structure"
+      ],
+      "aliases": [],
+      "profile": "note",
+      "fields": {},
+      "access": [
+        "demo"
+      ],
+      "maturity": "observation"
+    },
+    "expected": "Mathematics \u2192 Algebra. No robotics link is required.",
+    "expected_topics": [
+      "algebra"
+    ]
+  }
+]

@@ -44,3 +44,11 @@ Each view returns compact node summaries, at most 150 nodes and 300 edges. Excer
 Access filtering happens before views, counts, search and proposal generation. Source excerpts must also be permitted. Profile validation never fetches remote JSON schema references. These are boundaries for a trusted integration, not a replacement for authentication or an assurance against inference by a malicious authorized curator.
 
 The backend currently loads graph records for each operation; large graphs will need indexed filtering and retrieval. The browser limits are a bounded-view design, not a performance benchmark. The map does not yet aggregate relationships between collapsed topic groups; counts are direct permitted children, not all descendants.
+
+## Inspection and example fitting (0.2)
+
+`GET /api/node/<id>` includes a short excerpt, up to eight accepted direct children, and the permitted total child count. Topic cards open the next layer. `GET /api/edge/<id>` returns the edge, current endpoint summaries and graph revision from the same audience-filtered snapshot. Stale edges retain their original endpoint revision references. Summaries are excerpts, not generated interpretations.
+
+Keyword proposal candidates must share a subject tag; an untagged node uses title terms instead. The existing two-term overlap and bounded reciprocal-rank lists still apply. This conservative filter reduces generic/disclaimer-only matches, but does not understand negation or synonyms. Human review remains essential. AI proposals retain the existing classify/relate/verify workflow.
+
+The three examples in `demo/examples.json` describe expected placements without hardcoding those placements into the classifier. `python examples/content_fit.py` adds each to an isolated database, runs the actual keyword workflow, and shows that accepted membership requires a review decision. The browser gallery offers the same records and reopens existing IDs rather than duplicating them.

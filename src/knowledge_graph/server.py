@@ -117,6 +117,18 @@ def create_app(path, audiences=("demo",), model=None, profiles=None):
     def node(node_id):
         return jsonify(graph.node(node_id))
 
+    @app.get("/api/edge/<edge_id>")
+    def inspect_edge(edge_id):
+        return jsonify(graph.edge(edge_id))
+
+    @app.get("/api/examples")
+    def examples():
+        snapshot = graph.snapshot()
+        items = resource("demo/examples.json")
+        for item in items:
+            item["saved"] = item["node"]["id"] in snapshot["nodes"]
+        return jsonify(items=items)
+
     @app.get("/api/review")
     def review():
         g = graph.snapshot()

@@ -402,3 +402,82 @@ def test_pending_classification_becomes_stale_on_revision(graph):
         next(e for e in relations if e["target"] == "unclassified")["status"]
         == "accepted"
     )
+
+
+def test_topic_preview_and_edge_explanation_respect_access(graph):
+    robotics = graph.node("robotics")
+    assert "world-action-models" in {n["id"] for n in robotics["children"]}
+    edge_id = next(
+        e["id"] for e in robotics["edges"] if e["source"] == "world-action-models"
+    )
+    detail = graph.edge(edge_id)
+    assert detail["source"]["title"] == "World Action Models"
+    assert detail["target"]["title"] == "Robotics"
+    assert len(detail["source"]["summary"]) <= 240
+    assert "body" not in detail["source"]
+    with graph.transaction() as db:
+        node = graph.node("world-action-models")["node"]
+        node["access"] = ["restricted"]
+        db.execute(
+            "UPDATE nodes SET payload=? WHERE id=?", (json.dumps(node), node["id"])
+        )
+    assert "world-action-models" not in {
+        n["id"] for n in graph.node("robotics")["children"]
+    }
+    with pytest.raises(ValueError, match="not available"):
+        graph.edge(edge_id)
+
+
+def test_examples_find_subjects_without_forcing_robotics(graph):
+    for sample in resource("demo/examples.json"):
+        node = graph.add_node(sample["node"], "unclassified")
+        proposal = propose(graph, node["id"])
+        targets = {e["target"] for e in proposal["edges"] if e["type"] == "belongs_to"}
+        assert set(sample["expected_topics"]).issubset(targets)
+        if node["id"] == "example-group-questions":
+            assert "robotics" not in targets
+            assert all(
+                e["target"] == "algebra-note"
+                for e in proposal["edges"]
+                if e["type"] == "related_to"
+            )
+        apply(graph, proposal["id"])
+        for topic in sample["expected_topics"]:
+            assert node["id"] not in {n["id"] for n in graph.view(topic)["nodes"]}
+            edge = next(
+                e
+                for e in graph.snapshot()["edges"]
+                if e["source"] == node["id"]
+                and e["target"] == topic
+                and e["type"] == "belongs_to"
+            )
+            graph.review_edge(edge["id"], "accepted", graph.snapshot()["revision"])
+            assert node["id"] in {n["id"] for n in graph.view(topic)["nodes"]}
+
+
+def test_explanation_and_example_http_endpoints(tmp_path):
+    client = create_app(tmp_path / "http.sqlite3").test_client()
+    node = client.get("/api/node/robotics").json
+    edge_id = next(
+        e["id"] for e in node["edges"] if e["source"] == "world-action-models"
+    )
+    result = client.get("/api/edge/" + edge_id)
+    assert result.status_code == 200
+    assert result.json["edge"]["reason"]
+    assert result.json["source"]["summary"]
+    assert client.get("/api/edge/unknown").status_code == 400
+    samples = client.get("/api/examples").json["items"]
+    assert len(samples) == 3 and not any(s["saved"] for s in samples)
+    token = client.get("/api/config").json["token"]
+    node = {
+        k: v for k, v in samples[0]["node"].items() if k not in {"access", "maturity"}
+    }
+    assert (
+        client.post(
+            "/api/node",
+            json={"node": node, "parent": "unclassified"},
+            headers={"X-Graph-Token": token},
+        ).status_code
+        == 200
+    )
+    assert client.get("/api/examples").json["items"][0]["saved"]

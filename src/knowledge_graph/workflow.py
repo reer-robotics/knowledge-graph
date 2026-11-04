@@ -307,6 +307,17 @@ def propose(graph, node_id, model=None):
                 edges += [relations[d["index"]] for d in verification if d["keep"]]
         trace = client.trace
     else:
+
+        def anchored(match):
+            candidate = nodes[match["id"]]
+
+            def subject(n):
+                return terms(" ".join(n["tags"]) if n["tags"] else n["title"])
+
+            return bool(subject(source) & subject(candidate))
+
+        topic_matches = [m for m in topic_matches if anchored(m)]
+        matches = [m for m in matches if anchored(m)]
         if source["kind"] == "document":
             for match in topic_matches[:3]:
                 if len(match["terms"]) < 2:
@@ -316,7 +327,7 @@ def propose(graph, node_id, model=None):
                         "source": node_id,
                         "target": match["id"],
                         "type": "belongs_to",
-                        "reason": "Keyword classification: "
+                        "reason": "Subject-tag/title overlap and keyword classification: "
                         + ", ".join(match["terms"][:8])
                         + ". Not a semantic assessment.",
                         "evidence": [evidence(source)],
@@ -330,7 +341,7 @@ def propose(graph, node_id, model=None):
                     "source": node_id,
                     "target": match["id"],
                     "type": "related_to",
-                    "reason": "Shared terms: "
+                    "reason": "Subject-tag/title overlap; shared terms: "
                     + ", ".join(match["terms"][:8])
                     + ". Similarity does not imply support.",
                     "evidence": [evidence(source), evidence(nodes[match["id"]])],

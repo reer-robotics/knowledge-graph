@@ -4,7 +4,7 @@
       "id": "world-action-models",
       "title": "World Action Models",
       "kind": "topic",
-      "body": "Synthetic topic description: World Action Models.",
+      "body": "A research topic exploring models that connect observations, possible actions, and predicted outcomes. Open the topic to inspect research questions, hypotheses, and evaluation gaps.",
       "tags": [
         "world",
         "action",
@@ -24,7 +24,7 @@
       "id": "dynamics",
       "title": "Dynamics",
       "kind": "topic",
-      "body": "Synthetic topic description: Dynamics.",
+      "body": "Models of how motion changes under forces and assumptions. Read the toy dynamics note and consider where its assumptions limit robot planning.",
       "tags": [
         "dynamics",
         "mechanics",
@@ -42,7 +42,7 @@
       "id": "optimization",
       "title": "Optimization",
       "kind": "topic",
-      "body": "Synthetic topic description: Optimization.",
+      "body": "Choosing solutions under objectives and constraints. Includes mathematical assumptions and links to trajectory planning; relevance does not establish a proof.",
       "tags": [
         "optimization",
         "planning",
@@ -60,7 +60,7 @@
       "id": "algebra",
       "title": "Algebra",
       "kind": "topic",
-      "body": "Synthetic topic description: Algebra.",
+      "body": "Study algebraic structures such as groups. These reading notes remain independent of robotics unless an explicit connection is proposed.",
       "tags": [
         "algebra",
         "groups"
@@ -221,105 +221,105 @@
       "source": "world-action-models",
       "target": "learning",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "World Action Models is organized under Learning & autonomy so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "world-action-models",
       "target": "ai",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "World Action Models is organized under Artificial intelligence so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "dynamics",
       "target": "physics",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Dynamics is organized under Physics so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "optimization",
       "target": "mathematics",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Optimization is organized under Mathematics so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "algebra",
       "target": "mathematics",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Algebra is organized under Mathematics so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "wam-survey",
       "target": "world-action-models",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "World Action Models: research questions is organized under World Action Models so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "dynamics-note",
       "target": "dynamics",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "A toy dynamics model is organized under Dynamics so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "optimization-note",
       "target": "optimization",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Optimization: assumptions before solutions is organized under Optimization so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "optimization-note",
       "target": "planning",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Optimization: assumptions before solutions is organized under Robot planning so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "algebra-note",
       "target": "algebra",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Abstract algebra reading questions is organized under Algebra so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "wam-survey",
       "target": "prediction-claim",
       "type": "contains",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "World Action Models: research questions includes Toy claim: prediction may aid planning as a separately inspectable part of the investigation. Keeping it separate makes the claim or evidence gap visible.",
       "evidence": []
     },
     {
       "source": "wam-survey",
       "target": "toy-evidence",
       "type": "contains",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "World Action Models: research questions includes Toy experiment: missing validation as a separately inspectable part of the investigation. Keeping it separate makes the claim or evidence gap visible.",
       "evidence": []
     },
     {
       "source": "wam-survey",
       "target": "autonomy-reading",
       "type": "in_collection",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "World Action Models: research questions is included in Autonomy foundations to bring research questions and their physics or mathematics foundations into one reading list without duplicating the document.",
       "evidence": []
     },
     {
       "source": "dynamics-note",
       "target": "autonomy-reading",
       "type": "in_collection",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "A toy dynamics model is included in Autonomy foundations to bring research questions and their physics or mathematics foundations into one reading list without duplicating the document.",
       "evidence": []
     },
     {
       "source": "optimization-note",
       "target": "autonomy-reading",
       "type": "in_collection",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Optimization: assumptions before solutions is included in Autonomy foundations to bring research questions and their physics or mathematics foundations into one reading list without duplicating the document.",
       "evidence": []
     },
     {
@@ -361,6 +361,13 @@
           "locator": "Synthetic body, paragraph 1"
         }
       ]
+    },
+    {
+      "source": "world-action-models",
+      "target": "robotics",
+      "type": "belongs_to",
+      "reason": "World Action Models explores possible robot actions and their predicted outcomes, so Robotics offers a direct entry point. The same topic also belongs to Learning & autonomy and Artificial intelligence.",
+      "evidence": []
     }
   ]
 }

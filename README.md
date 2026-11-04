@@ -20,7 +20,9 @@ knowledge-map serve --port 4175
 Open **http://127.0.0.1:4175/**. The first launch seeds an empty local database with **synthetic** examples; subsequent launches retain your edits in `workspace/graph.sqlite3`. Nothing is uploaded to GitHub.
 
 - **All domains:** start with Robotics, AI, Physics and Mathematics.
-- Select a node, then **Explore contents** to move down a layer. Use Back or the breadcrumb buttons to return. Canvas +/− and the mouse wheel control geometric zoom; layer changes are explicit navigation, not automatic camera thresholds.
+- Select a node for a short description and a preview of its children, then **Explore topic →** (or **Explore contents →**) to move down a layer. Use Back or the breadcrumb buttons to return. Canvas +/− and the mouse wheel control geometric zoom; layer changes are explicit navigation, not automatic camera thresholds.
+- **Robotics → Explore topic → World Action Models:** descend directly into subtopics. Click any connection to see both endpoint summaries, its reasoning, evidence excerpts, and review status.
+- **Try example content:** add action-rollout, motion-model, or abstract-algebra notes. Suggestions start as proposals; the algebra example does not need a Robotics link. Saved examples reopen without creating duplicates.
 - **Explore World Action Models:** inspect a cross-domain investigation, its claims/evidence, and proposed foundations.
 - **Autonomy foundations:** a research collection shares the same canonical documents across subject boundaries.
 - **Add knowledge → Example document → Save locally:** add a trajectory investigation under Unclassified. Choose **Suggest connections**, inspect the proposal, and **Add to review queue**. Accept or reject individual relationships.
@@ -36,7 +38,7 @@ The sidebar is an accessible alternative to selecting canvas nodes. Documents ca
 | Storage | SQLite transactions, node revisions, relationship decisions and mutation history |
 | Extensible subjects | Topic records with titles, descriptions, tags and aliases; multiple parent topics, cycle checks |
 | Content profiles | JSON schemas for notes, experiments, theorem worksheets and physics models; trusted custom schema directory |
-| Ranking | Reciprocal rank fusion of title/tag/alias overlap and body overlap; relevance is not credibility |
+| Ranking | Reciprocal rank fusion of title/tag/alias overlap and body overlap; keyword proposals also require shared subject tags (title terms when tags are absent); relevance is not credibility |
 | Suggestions | Keyword classification and `related_to` proposals by default |
 | Optional AI | One installed local Ollama model, separate classify/relate/verify skill passes |
 | Review | Proposed / accepted / rejected / stale relationship states; exact quoted evidence for factual links |
@@ -44,6 +46,8 @@ The sidebar is an accessible alternative to selecting canvas nodes. Documents ca
 | Browser memory | At most 150 nodes / 300 edges per view; bodies fetched on selection; ten cached layouts; old elements removed |
 
 Maturity is curator metadata, separate from relevance. The theorem profile permits only `unverified` proof status in this release. Its schema checks that fields exist; it does not verify mathematics. Physics profiles require equations, units, assumptions and validity descriptions; they do not perform dimensional analysis.
+
+Updated bundled descriptions and topic placements apply to newly initialized workspaces. Existing databases retain their content and decisions; no automatic reseeding or overwriting occurs. The example gallery also works in existing workspaces.
 
 ## Optional local model
 
@@ -90,6 +94,7 @@ Global options precede the subcommand. `init` is explicit and refuses duplicate 
 pytest -q
 node --test tests/state.test.mjs  # Node 22+
 python examples/run_demo.py
+python examples/content_fit.py
 python -m pip wheel --no-deps . -w dist
 ```
 

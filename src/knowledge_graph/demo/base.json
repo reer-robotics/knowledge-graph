@@ -18,7 +18,7 @@
       "id": "robotics",
       "title": "Robotics",
       "kind": "topic",
-      "body": "Synthetic topic description: Robotics.",
+      "body": "Study how robots perceive, learn, plan, and act. Explore World Action Models, learning and autonomy, and robot planning in this demonstration.",
       "tags": [
         "robot",
         "autonomy",
@@ -36,7 +36,7 @@
       "id": "ai",
       "title": "Artificial intelligence",
       "kind": "topic",
-      "body": "Synthetic topic description: Artificial intelligence.",
+      "body": "Methods for learning from observations and building predictive models. World Action Models are shared with Robotics rather than duplicated.",
       "tags": [
         "learning",
         "model",
@@ -54,7 +54,7 @@
       "id": "physics",
       "title": "Physics",
       "kind": "topic",
-      "body": "Synthetic topic description: Physics.",
+      "body": "Models of motion and physical interactions, with explicit assumptions and units. Start with Dynamics to inspect a toy motion model.",
       "tags": [
         "mechanics",
         "dynamics"
@@ -71,7 +71,7 @@
       "id": "mathematics",
       "title": "Mathematics",
       "kind": "topic",
-      "body": "Synthetic topic description: Mathematics.",
+      "body": "Foundations including optimization, algebra, and new areas you add later. Mathematical notes can stand alone or connect to applications.",
       "tags": [
         "optimization",
         "probability",
@@ -89,7 +89,7 @@
       "id": "learning",
       "title": "Learning & autonomy",
       "kind": "topic",
-      "body": "Synthetic topic description: Learning & autonomy.",
+      "body": "Research questions about learning action choices and predictive models for autonomous robots. World Action Models is one subtopic.",
       "tags": [
         "learning",
         "model",
@@ -107,7 +107,7 @@
       "id": "planning",
       "title": "Robot planning",
       "kind": "topic",
-      "body": "Synthetic topic description: Robot planning.",
+      "body": "Choosing robot trajectories and actions subject to constraints. Related investigations can connect to optimization and dynamics.",
       "tags": [
         "trajectory",
         "planning",
@@ -141,49 +141,49 @@
       "source": "robotics",
       "target": "knowledge",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Robotics is organized under Knowledge atlas so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "ai",
       "target": "knowledge",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Artificial intelligence is organized under Knowledge atlas so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "physics",
       "target": "knowledge",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Physics is organized under Knowledge atlas so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "mathematics",
       "target": "knowledge",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Mathematics is organized under Knowledge atlas so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "unclassified",
       "target": "knowledge",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Unclassified is organized under Knowledge atlas so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "learning",
       "target": "robotics",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Learning & autonomy is organized under Robotics so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     },
     {
       "source": "planning",
       "target": "robotics",
       "type": "belongs_to",
-      "reason": "Explicit placement in this synthetic demonstration.",
+      "reason": "Robot planning is organized under Robotics so readers can find this subject or document while exploring that area. This is a curator-selected placement in the synthetic library.",
       "evidence": []
     }
   ]

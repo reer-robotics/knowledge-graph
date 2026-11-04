@@ -12,7 +12,7 @@ export function positions(nodes,focus) {
   const ids=nodes.filter(n=>n.id!==focus).map(n=>n.id).sort();
   const result={[focus]:{x:0,y:0}};
   ids.forEach((id,index)=>{
-    if(ids.length<=12){const angle=-Math.PI/2+index*2*Math.PI/ids.length;const radius=Math.max(180,ids.length*26);result[id]={x:Math.cos(angle)*radius,y:Math.sin(angle)*radius};}
+    if(ids.length<=12){const angle=ids.length===2?-3*Math.PI/4+index*Math.PI/2:-Math.PI/2+index*2*Math.PI/ids.length;const radius=Math.max(180,ids.length*26);result[id]={x:Math.cos(angle)*radius,y:Math.sin(angle)*radius};}
     else result[id]={x:(index%8-3.5)*150,y:(Math.floor(index/8)+1)*130};
   });return result;
 }

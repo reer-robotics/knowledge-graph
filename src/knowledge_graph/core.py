@@ -367,13 +367,54 @@ class Graph:
                 )
             self.log(db, "import", bundle)
 
+    @staticmethod
+    def summary(node):
+        text = " ".join(node["body"].split())
+        excerpt = text if len(text) <= 240 else text[:237].rsplit(" ", 1)[0] + "…"
+        return {k: node[k] for k in ["id", "title", "kind", "revision"]} | {
+            "summary": excerpt
+        }
+
+    def edge(self, edge_id):
+        graph = self.snapshot()
+        edge = next((e for e in graph["edges"] if e["id"] == edge_id), None)
+        if edge is None:
+            raise ValueError("Connection not available")
+        return {
+            "edge": edge,
+            "source": self.summary(graph["nodes"][edge["source"]]),
+            "target": self.summary(graph["nodes"][edge["target"]]),
+            "revision": graph["revision"],
+        }
+
     def node(self, node_id):
         graph = self.snapshot()
         node = graph["nodes"].get(node_id)
         if not node:
             raise ValueError("Node not available")
+        children = set()
+        for edge in graph["edges"]:
+            if edge["status"] != "accepted":
+                continue
+            if (
+                edge["type"] in {"belongs_to", "in_collection"}
+                and edge["target"] == node_id
+            ):
+                children.add(edge["source"])
+            if edge["type"] == "contains" and edge["source"] == node_id:
+                children.add(edge["target"])
+        ordered = sorted(
+            children,
+            key=lambda i: (
+                graph["nodes"][i]["kind"] != "topic",
+                graph["nodes"][i]["title"],
+            ),
+        )
         return {
             "node": node,
+            "summary": self.summary(node)["summary"],
+            "children": [self.summary(graph["nodes"][i]) for i in ordered[:8]],
+            "child_count": len(children),
             "edges": [
                 e for e in graph["edges"] if node_id in {e["source"], e["target"]}
             ],
