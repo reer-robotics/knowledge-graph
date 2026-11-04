@@ -2,7 +2,9 @@
 
 An extensible local knowledge atlas: topics, documents, claims, evidence, and research collections. Explore a small area at a time, propose where new material belongs, and inspect the evidence behind each relationship.
 
-![Knowledge atlas demonstration](docs/demo.jpg)
+![Topic exploration with example content](docs/topic-exploration.jpg)
+
+[View the connection explanation panel](docs/connection-details.jpg)
 
 This is an independent public component alongside [Document Formatter](https://github.com/reer-robotics/document-formatter) and [Reading Assistant](https://github.com/reer-robotics/reading-assistant). It does not change those repositories or the company journal.
 
